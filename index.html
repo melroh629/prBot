@@ -7,39 +7,13 @@
 
 <body>
   <script>
-    // function loadScript(src, callback) {
-    //   return new Promise(function(resolve, reject){
-    //     let script = document.createElement('script');
-    //     script.src = src;
-
-    //     script.onload = () => resolve(script);
-    //     script.onerror = () => reject(new Error(`${src}를 불러오는 도중에 에러가 발생`))
-
-    //     document.head.append(script);
-    //     })
-    // }
-    // let promise = loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodㅇㅇㄴㄴash.js')
-    
-    // promise.then(
-    //   script => alert(`${script.src}가 로드됨`),
-    //   error => alert(`${error.message}`)
-    // );
-
-    // delay(3000).then(() => console.log("3초 후에 실행됩니다!"))
-
-    // let delay = (number)=> new Promise(function(resolve, reject){
-    //   setTimeout(() => resolve(), number)
-    // })
-    // delay(3000).then(()=>console.log("3초 후에 실행됩니다!"));
-
-
     const getData = (data) => {
-      return new Promise(function(resolve, reject){
-        setTimeout(()=>{resolve(console.log(`받아온 데이터는 ${data}`))},2000)
-      })
-    }
+    return new Promise(function(resolve, reject) {
+        setTimeout(() => { resolve(data) }, 2000)
+    })
+}
 
-    getData("이것이 데이터!!")
+getData("이것이 데이터!!").then(data => console.log(`받아온 데이터는 ${data}`));
   </script>
 
 
